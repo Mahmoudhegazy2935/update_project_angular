@@ -1,0 +1,23 @@
+<div>
+    <form (ngSubmit)="addProduct()">
+        <input type="text" name="title" placeholder="title" [(ngModel)]="newproduct.title" required>
+        <input type="text" name="images" placeholder="images" [(ngModel)]="newproduct.image" required>
+        <input type="number" name="price" placeholder="price" [(ngModel)]="newproduct.price" required>
+        <!-- <input type="text" placeholder="category" [(ngModel)]="newproduct.category"> -->
+        <input type="text" name="description" placeholder="description" [(ngModel)]="newproduct.description" required>
+        <button class="btn btn-success" type="submit">add</button>
+    </form>
+</div>
+<div class="row p-0 m-0">
+    @for(product of products ;track product.id){
+    <div class="card" style="width: 18rem;">
+        <img src="{{product.image}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{product.title}}</h5>
+            <p class="card-text">{{product.description}}</p>
+            <a class="btn btn-primary" [routerLink]="['/home',product.id]">view details</a>
+            <a class="btn btn-danger" (click)="deleteProduct(product.id)">delete</a>
+        </div>
+    </div>
+    }
+</div>

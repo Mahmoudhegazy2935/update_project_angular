@@ -1,5 +1,11 @@
-<!-- @if(product){
-<form (ngSubmit)="updateProduct()">
-    <input type="text" name="" id="">
-</form>
-} -->
+<div>
+    <h2>{{editemood?"editeproduct":"addnewproduct"}}</h2>
+    <form (ngSubmit)="onSubmit()">
+        <input type="text" [(ngModel)]="product.id" name="id" title="id">
+        <input type="text" [(ngModel)]="product.title" placeholder="title" required name="title">
+        <input type="text" [(ngModel)]="product.image" placeholder="image" required name="image">
+        <input type="number" [(ngModel)]="product.price" placeholder="price" required name="price">
+        <input type="text" [(ngModel)]="product.description" placeholder="description" name="description" required>
+        <button type="submit" class="btn btn-danger">{{editemood?"update":"add"}}</button>
+    </form>
+</div>

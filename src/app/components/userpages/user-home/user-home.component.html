@@ -1,0 +1,14 @@
+
+<div class="row p-0 m-0">
+    @for(product of products ;track product.id){
+    <div class="card" style="width: 18rem;">
+        <img src="{{product.image}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{product.title}}</h5>
+            <p class="card-text">{{product.price}}.L.E</p>
+            <a class="btn btn-primary" [routerLink]="['/userhome',product.id]" >view details</a>
+            <a class="btn btn-primary" (click)="addToCart(product)">addcart</a>
+        </div>
+    </div>
+    }
+</div>

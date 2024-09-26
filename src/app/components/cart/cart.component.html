@@ -1,0 +1,28 @@
+<p>cart works!</p>
+@for(item of products;track item.id){
+<div>
+    <p>{{item.title}}</p>
+    <p>{{item.price}}</p>
+    <img src="{{item.image}}" width="100px" alt="">
+    <button class="btn btn-danger" (click)="removeproduct(item)">remove</button>
+    <div>
+        <button (click)="updateQuantity(item,'min')">-</button>
+        <span>{{item.quantity}}</span>
+        <button (click)="updateQuantity(item,'max')">+</button>
+    </div>
+    <div>{{ getProductTotalPrice(item) }}</div>
+</div>
+}
+@if(products.length==0){
+<p>No items in cart</p>
+}
+<button class="btn btn-danger" (click)="emptycart()">clearall</button>
+<hr>
+<div>total:{{grandtotal}}</div>
+<button (click)="purchase()" class="btn-purchase">buy now</button>
+@if(purchaseMessage){
+
+<div class="purchase-message">
+    {{ purchaseMessage }}
+</div>
+}

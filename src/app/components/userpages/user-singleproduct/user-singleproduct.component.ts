@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { Product } from '../../models/products';
+import { Component } from '@angular/core';
+import { Product } from '../../../models/products';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ProductService } from '../../service/product.service';
+import { ProductService } from '../../../service/product.service';
 
 @Component({
-  selector: 'app-single-product',
+  selector: 'app-user-singleproduct',
   standalone: true,
   imports: [],
-  templateUrl: './single-product.component.html',
-  styleUrl: './single-product.component.css',
+  templateUrl: './user-singleproduct.component.html',
+  styleUrl: './user-singleproduct.component.css',
 })
-export class SingleProductComponent implements OnInit {
+export class UserSingleproductComponent {
   product: Product | undefined;
   constructor(
     private route: ActivatedRoute,

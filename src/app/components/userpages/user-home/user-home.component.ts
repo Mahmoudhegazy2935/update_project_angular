@@ -1,19 +1,17 @@
 import { Component } from '@angular/core';
-import { Product } from '../../models/products';
-import { ProductService } from '../../service/product.service';
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { Product } from '../../../models/products';
+import { CartService } from '../../../service/cart.service';
+import { ProductService } from '../../../service/product.service';
 import { Router, RouterModule } from '@angular/router';
-import { CartService } from '../../service/cart.service';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-user-home',
   standalone: true,
-  imports: [FormsModule, CommonModule, RouterModule],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css',
+  imports: [RouterModule],
+  templateUrl: './user-home.component.html',
+  styleUrl: './user-home.component.css',
 })
-export class HomeComponent {
+export class UserHomeComponent {
   products: Product[] = [];
   newproduct: Product = {} as Product;
   constructor(
@@ -23,9 +21,9 @@ export class HomeComponent {
   ) {}
   ngOnInit(): void {
     this.getProducts();
-    this.products.forEach((item:any)=>{
-      Object.assign(item,{quantity:1,total:item.price})
-    })
+    this.products.forEach((item: any) => {
+      Object.assign(item, { quantity: 1, total: item.price });
+    });
   }
   getProducts() {
     this.productsrvice
@@ -66,6 +64,5 @@ export class HomeComponent {
   }
   addToCart(product: any): void {
     this.cartservice.addtocart(product);
-    
   }
 }

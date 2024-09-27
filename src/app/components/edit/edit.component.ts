@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 export class EditComponent {
   product: Product = {} as Product;
   editemood: boolean = false;
+  base64:any='';
   constructor(
     private productsrvice: ProductService,
     private route: ActivatedRoute,
@@ -41,5 +42,17 @@ export class EditComponent {
         this.router.navigate(['/home']);
       });
     }
+  }
+
+
+  getImagePath(event:any) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+       this.base64 = reader.result;
+
+       console.log(this.base64)
+    };
   }
 }

@@ -9,10 +9,12 @@ import { CartComponent } from './components/cart/cart.component';
 import { UserHomeComponent } from './components/userpages/user-home/user-home.component';
 import { UserSingleproductComponent } from './components/userpages/user-singleproduct/user-singleproduct.component';
 import { UserCartComponent } from './components/userpages/user-cart/user-cart.component';
+import { UserLoginComponent } from './components/user-login/user-login.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'home', component: HomeComponent, title: 'home' },
+  { path: 'login', component: UserLoginComponent, title: 'login' },
   { path: 'home/:id', component: SingleProductComponent },
   { path: 'edit/:id', component: EditComponent },
   { path: 'edit', component: EditComponent },

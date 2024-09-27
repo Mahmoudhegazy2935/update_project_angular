@@ -1,0 +1,32 @@
+footer {
+    background-color: #4094F7;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+@media(max-width:768px) {
+    footer {
+        flex-direction: column;
+    }
+
+    .cols {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .col1 {
+        width: 100%;
+    }
+
+    .col2 {
+        width: 100%;
+    }
+
+    .col3 {
+        width: 100%;
+    }
+}

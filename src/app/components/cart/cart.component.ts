@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../service/cart.service';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [],
+  imports: [CommonModule,FormsModule],
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css'], 
 })

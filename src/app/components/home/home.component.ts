@@ -16,6 +16,13 @@ import { CartService } from '../../service/cart.service';
 export class HomeComponent {
   products: Product[] = [];
   newproduct: Product = {} as Product;
+  images: string[] = [
+    'https://images.unsplash.com/photo-1721332150382-d4114ee27eff?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxfHx8ZW58MHx8fHx8',
+    'https://images.unsplash.com/photo-1727324735318-c25d437052f7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw2fHx8ZW58MHx8fHx8',
+    'https://images.unsplash.com/photo-1727294810027-220b285828e9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw4fHx8ZW58MHx8fHx8',
+  ];
+  currentIndex: number = 0;
+  intervalId: any;
   constructor(
     private cartservice: CartService,
     private productsrvice: ProductService,
@@ -23,9 +30,20 @@ export class HomeComponent {
   ) {}
   ngOnInit(): void {
     this.getProducts();
-    this.products.forEach((item:any)=>{
-      Object.assign(item,{quantity:1,total:item.price})
-    })
+    this.startImageRotation();
+    this.products.forEach((item: any) => {
+      Object.assign(item, { quantity: 1, total: item.price });
+    });
+  }
+  startImageRotation() {
+    this.intervalId = setInterval(() => {
+      this.currentIndex = (this.currentIndex + 1) % this.images.length;
+    }, 1000);
+  }
+  ngOnDestroy() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
   }
   getProducts() {
     this.productsrvice

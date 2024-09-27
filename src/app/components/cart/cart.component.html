@@ -1,4 +1,4 @@
-<p>cart works!</p>
+<!-- <p>cart works!</p>
 @for(item of products;track item.id){
 <div>
     <p>{{item.title}}</p>
@@ -24,5 +24,78 @@
 
 <div class="purchase-message">
     {{ purchaseMessage }}
+</div>
+} -->
+
+<div>
+    <div id="conttext" class="mx-3">
+        <h1>Shopping Cart</h1>
+        <div class="headCart">
+            <p class="lead">You Have <label for="" class="text-danger fw-bold"></label> item in
+                your
+                cart</p>
+            <span class="btn btn-danger text-capitalize" (click)="emptycart()">
+                clear all
+                <img src="../../../../assets/broom.png" width="30px" alt=""></span>
+        </div>
+    </div>
+</div>
+@if(products.length==0){
+<p >No items in cart</p>
+}
+<div>
+    <div class="mx-3">
+        @for (item of products; track item.id) {
+        <div id="contall">
+            <div id="contimgproduct">
+                <div id="imgproduct">
+                    <img src="{{item.image}}" width="100px" alt="">
+                </div>
+                <div class="delimg1">
+                    <div class="btn" (click)="removeproduct(item)">
+                        <img src="../../../../assets/close.png" width="20px" alt="">
+                    </div>
+                </div>
+            </div>
+            <div id="name">
+                <h5 class="fw-bold">Name</h5>
+                <h5>{{item.title}}</h5>
+            </div>
+            <div id="price">
+                <h5 class="fw-bold">Price</h5>
+                <p>{{item.price}} L.E</p>
+            </div>
+            <div id="quantity" >
+                <h5 class="fw-bold">Quantity</h5>
+                <div class="d-flex ">
+                    <div class="btn d-flex" (click)="updateQuantity(item,'max')"><img src="../../../../assets/plus.png"
+                            width="15px" alt="">
+                    </div>
+                    <input placeholder="quantity" type="text" name="quantity" [(ngModel)]="item.quantity">
+                    <div class="btn d-flex" (click)="updateQuantity(item,'min')"><img src="../../../../assets/minus.png"
+                            width="15px" alt="">
+                    </div>
+                </div>
+            </div>
+            <div id="total">
+                <h5 class="fw-bold">Total</h5>
+                <p> {{ getProductTotalPrice(item)| currency:'':'':'1.3-3' }}L.E</p>
+            </div>
+            <div class="delimg2 btn" (click)="removeproduct(item)">
+                <img src="../../../../assets/delete.png" width="20px" alt="">
+            </div>
+        </div>
+        }
+        <div class="total text-center">
+            <p><strong>Total :{{grandtotal| currency:'':'':'1.3-3'}}</strong> L.E</p>
+            <div class="btn btn-success fs-5 mb-5 fw-bold w-100" (click)="purchase()">Order Now</div>
+        </div>
+    </div>
+</div>
+@if(purchaseMessage){
+<div  class="message">
+    <img src="../../../assets/check.png" width="30px" alt="">
+    {{ purchaseMessage }}
+
 </div>
 }

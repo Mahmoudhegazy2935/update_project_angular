@@ -20,12 +20,5 @@ export const routes: Routes = [
   { path: 'edit', component: EditComponent },
   { path: 'aboutus', component: AboutUSComponent, title: 'aboutus' },
   { path: 'contactus', component: ContactUSComponent, title: 'contactus' },
-  { path: 'cart', component: CartComponent },
   { path: '**', component: NotfoundComponent },
-
-  // { path: '', redirectTo: '/userhome', pathMatch: 'full' },
-  // { path: 'userhome', component: UserHomeComponent, title: 'home' },
-  // { path: 'userhome/:id', component: UserSingleproductComponent },
-  // { path: 'usercart', component: UserCartComponent },
-  // { path: '**', component: NotfoundComponent },
 ];

@@ -1,13 +1,45 @@
+<div class="contimg_text">
+    <div class="contText">
+        <h1 class="name">Dealora</h1>
+        <p id="slogan">Your Ultimate Destination For Unbeatable Deals</p>
+        <p id="describtion">Dealora is your go-to online store for exclusive offers
+            and unbeatable prices, offering a wide range of products
+            to meet all your needs.</p>
+        <div><img src="../../../../assets/rating.png" width="100px" alt=""></div>
+        <button class="btn" id="aboutusbtn" [routerLink]="['/aboutus']">Read more...</button>
+    </div>
+    <div class="contImg">
+        <img width="100%" height="300px" [src]="images[currentIndex]" alt="">
+    </div>
+</div>
+<hr>
+<div class="bodycards ">
+    @for(product of products ; track product.id){
+    <div id="cards">
+        <div class="d-flex mt-2 mx-2 justify-content-between align-items-end">
+            <div class="">
+                <img src="../../../../assets/tag.png" width="30px" alt="">
+                <span class="text-danger ps-2">-10%</span>
+            </div>
+            <div class="btn d-flex align-items-center justify-content-center" (click)="addToCart(product)">
+                <img src="../../../../assets/trolley.png" width="30px" alt="Add To Cart">
+            </div>
+        </div>
+        <div id="image_text">
+            <div id="contimage">
+                <img src="{{product.image}} " width="250px" height="250px" alt="">
+            </div>
+            <div class="mx-3">
+                <h4>{{product.title|slice:0:15}}</h4>
+                <p>{{product.description|slice:0:50}}...</p>
+                <span>{{product.price}} L.E</span>
+                <div>
+                </div>
+                <div class="d-flex justify-content-between ">
+                    <button class="btn  my-3 " id="viewbtn" [routerLink]="['/userhome/', product.id]">View Details</button>
 
-<div class="row p-0 m-0">
-    @for(product of products ;track product.id){
-    <div class="card" style="width: 18rem;">
-        <img src="{{product.image}}" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">{{product.title}}</h5>
-            <p class="card-text">{{product.price}}.L.E</p>
-            <a class="btn btn-primary" [routerLink]="['/userhome',product.id]" >view details</a>
-            <a class="btn btn-primary" (click)="addToCart(product)">addcart</a>
+                </div>
+            </div>
         </div>
     </div>
     }

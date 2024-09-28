@@ -1,11 +1,20 @@
-<div>
+<div class="contall">
     @if(product){
-    <div class="card" style="width: 18rem;">
-        <img src="{{product.image}}" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">{{product.title}}</h5>
-            <p class="card-text">{{product.description}}</p>
-            <a href="#" class="btn btn-primary">buy now</a>
+    <div id="contall2">
+        <div id="textdetails">
+            <h1>{{product.title}}</h1>
+            <p id="description">{{product.description}}</p>
+            <p id="price">{{product.price}}L.E</p>
+            <div id="btn" class="btn text-capitalize" (click)="addToCart(product)">
+                add to cart
+                <img src="../../../../assets/e-commerce.png" id="imgcart" alt="">
+            </div>
         </div>
-    </div>}
+        <div id="imgview">
+            <div class="circleimg">
+                <img src="{{product.image}}" id="imgproduct" alt="">
+            </div>
+        </div>
+    </div>
+    }
 </div>

@@ -1,0 +1,155 @@
+.message {
+    background-color: #14be14;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 7px;
+    padding: 10px;
+    margin: 20px;
+    text-transform: capitalize;
+}
+
+#name {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+#price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+}
+
+#total {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 20%;
+}
+
+#quantity {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 20%;
+}
+
+input {
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    width: 80%;
+    text-align: center;
+}
+
+.delimg1 {
+    display: none;
+}
+
+#imgproduct {
+    width: 20%;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 2px 2px 2px rgb(193, 203, 212);
+}
+
+.delimg2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delimg2:hover {
+    transform: scale(1.13);
+}
+
+#contall {
+    border-radius: 20px;
+    background-color: aliceblue;
+    margin-top: 20px;
+    padding-left: 10px;
+    display: flex;
+    padding-top: 8px;
+    box-shadow: 2px 2px 2px rgb(193, 203, 212);
+}
+
+.total {
+    margin-top: 20px;
+}
+
+@media(max-width:678px) {
+    #contall {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .delimg1 {
+        display: inline;
+    }
+
+    .delimg1:hover {
+        transform: scale(1.03);
+    }
+
+    .delimg2 {
+        display: none;
+    }
+
+    #contimgproduct {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #imgproduct {
+        width: 90%;
+    }
+
+    #name {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    #name h5 {
+        text-align: center;
+    }
+
+    #price {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    #price p {
+        align-items: center;
+        margin-top: 15px;
+        margin-left: 25px;
+    }
+
+    #total {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    #total p {
+        align-items: center;
+        margin-top: 15px;
+        margin-left: 25px;
+    }
+
+    #quantity {
+        width: 100%;
+        align-items: start;
+        flex-direction: row;
+    }
+
+}

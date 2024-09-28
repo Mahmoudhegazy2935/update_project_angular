@@ -1,14 +1,25 @@
-<div>
-    <h2>{{editemood?"editeproduct":"addnewproduct"}}</h2>
-
-    <form (ngSubmit)="onSubmit()">
-        <input type="text" [(ngModel)]="product.id" name="id" title="id">
-        <input type="text" [(ngModel)]="product.title" placeholder="title" required name="title">
-        <input type="file" (change)="getImagePath($event)">
-        <img src="{{base64}}" alt="">
-        <input type="text" [(ngModel)]="base64"  [(ngModel)]="product.image" placeholder="image" required name="image">
-        <input type="number" [(ngModel)]="product.price" placeholder="price" required name="price">
-        <input type="text" [(ngModel)]="product.description" placeholder="description" name="description" required>
-        <button type="submit" class="btn btn-danger">{{editemood?"update":"add"}}</button>
-    </form>
+<div class="contall">
+    <div class="cont">
+        <h2>{{editemood?"edite product":"add new product"}}</h2>
+        <form (ngSubmit)="onSubmit()">
+            <div class="contimgmood">
+                <img src="{{editemood?'../../../assets/edit.png':'../../../assets/create.png'}}" id="moodimg"
+                    alt="{{editemood?'edite img':'create img'}}">
+            </div>
+            <div class="continput">
+                <input type="text" placeholder="Enter The Id" [(ngModel)]="product.id" id="id" name="id" title="id">
+                <input type="text" [(ngModel)]="product.title" id="title" placeholder="enter the title" required
+                    name="title">
+                <input placeholder="enter the file" type="file" id="file" (change)="getImagePath($event)">
+                <img src="{{base64}}" alt="" id="imgview">
+                <input type="text" [(ngModel)]="base64" id="imglink" [(ngModel)]="product.image"
+                    placeholder="link of image" required name="image">
+                <input type="number" id="price" [(ngModel)]="product.price" placeholder="enter the price" required
+                    name="price">
+                <input type="text" id="description" [(ngModel)]="product.description"
+                    placeholder="enter the description" name="description" required>
+                <button type="submit" id="submit">{{editemood?"update":"add"}}</button>
+            </div>
+        </form>
+    </div>
 </div>

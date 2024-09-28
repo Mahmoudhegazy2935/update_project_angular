@@ -5,8 +5,8 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class CartService {
-  product = new BehaviorSubject<any>([]);
-  cartitemlist: any = [];
+  product = new BehaviorSubject<any>(this.getCartFromLocalStorage());
+  cartitemlist: any = this.getCartFromLocalStorage();
 
   constructor() {}
 
@@ -19,9 +19,11 @@ export class CartService {
       product.quantity = 1;
     }
     this.cartitemlist.push(product);
+    this.updateLocalStorage();
     this.product.next(this.cartitemlist);
     this.gettotalprice();
   }
+
   getProductTotalPrice(product: any): number {
     if (product.price && product.quantity) {
       return product.price * product.quantity;
@@ -41,6 +43,7 @@ export class CartService {
 
   removeallcart() {
     this.cartitemlist = [];
+    this.updateLocalStorage();
     this.product.next(this.cartitemlist);
   }
 
@@ -50,6 +53,18 @@ export class CartService {
         this.cartitemlist.splice(index, 1);
       }
     });
+    this.updateLocalStorage();
     this.product.next(this.cartitemlist);
+  }
+
+
+  private updateLocalStorage() {
+    localStorage.setItem('cartItems', JSON.stringify(this.cartitemlist));
+  }
+
+
+  private getCartFromLocalStorage(): any {
+    const savedCart = localStorage.getItem('cartItems');
+    return savedCart ? JSON.parse(savedCart) : [];
   }
 }

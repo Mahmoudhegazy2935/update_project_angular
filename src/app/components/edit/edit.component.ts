@@ -51,8 +51,6 @@ export class EditComponent {
     reader.readAsDataURL(file);
     reader.onload = () => {
        this.base64 = reader.result;
-
-       console.log(this.base64)
     };
   }
 }

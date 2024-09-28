@@ -1,7 +1,39 @@
+<!-- nav:user -->
 <nav>
-    <a [routerLink]="['/home']" routerLinkActive="router-link-active" >home </a>
-    <a [routerLink]="['/login']" routerLinkActive="router-link-active" >home </a>
-    <a [routerLink]="['/aboutus']">aboutus</a>
-    <a [routerLink]="['/contactus']">contactus</a>
-    <a [routerLink]="['/cart']">cart</a>
+    <div class="address">
+        <h1 class="text-bold"><button [routerLink]="['/userhome']" >Dealora</button></h1>
+    </div>
+    <div id="allelements">
+        <div id="elements">
+            <ul>
+                <li class="mx-3"><a [routerLink]="['/userhome']" routerLinkActive="color">Home</a></li>
+                <li class="mx-3"><a [routerLink]="['/usercart']" routerLinkActive="color">Cart</a></li>
+                <li class="mx-3"><a [routerLink]="['/aboutus']" routerLinkActive="color">About Us</a></li>
+                <li class="mx-3"><a [routerLink]="['/contactus']" routerLinkActive="color">contact Us</a></li>
+            </ul>
+        </div>
+        <div class="menu" (click)="showbtn()">
+            <img src="../../../../assets/burger-bar.png" width="35px" alt="">
+        </div>
+    </div>
 </nav>
+<!-- nav:admin -->
+<!-- <nav>
+    <div class="address">
+        <h1 ><button class="name" [routerLink]="['/home']">Dealora</button></h1>
+    </div>
+    <div id="allelements">
+
+        <div class="elements">
+            <ul>
+                <li class="mx-3"><a [routerLink]="['/home']" routerLinkActive="color">Home</a></li>
+                <li class="mx-3"><a [routerLink]="['/cart']" routerLinkActive="color">Cart</a></li>
+                <li class="mx-3"><a [routerLink]="['/aboutus']" routerLinkActive="color">About Us</a></li>
+                <li class="mx-3"><a [routerLink]="['/contactus']" routerLinkActive="color">contact Us</a></li>
+            </ul>
+        </div>
+        <div class="menu">
+            <img src="../../../../assets/burger-bar.png" width="35px" alt="">
+        </div>
+    </div>
+</nav> -->

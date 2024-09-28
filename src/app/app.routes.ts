@@ -12,12 +12,24 @@ import { UserCartComponent } from './components/userpages/user-cart/user-cart.co
 import { UserLoginComponent } from './components/user-login/user-login.component';
 
 export const routes: Routes = [
+  //admin:pages
+  // { path: '', redirectTo: '/login', pathMatch: 'full' },
+  // { path: 'home', component: HomeComponent, title: 'home' },
+  // { path: 'login', component: UserLoginComponent, title: 'login' },
+  // { path: 'home/:id', component: SingleProductComponent },
+  // { path: 'cart', component: CartComponent },
+  // { path: 'edit/:id', component: EditComponent },
+  // { path: 'edit', component: EditComponent },
+  // { path: 'aboutus', component: AboutUSComponent, title: 'aboutus' },
+  // { path: 'contactus', component: ContactUSComponent, title: 'contactus' },
+  // { path: '**', component: NotfoundComponent },
+
+  //user:pages
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent, title: 'home' },
+  { path: 'userhome', component: UserHomeComponent, title: 'userhome' },
   { path: 'login', component: UserLoginComponent, title: 'login' },
-  { path: 'home/:id', component: SingleProductComponent },
-  { path: 'edit/:id', component: EditComponent },
-  { path: 'edit', component: EditComponent },
+  { path: 'userhome/:id', component: UserSingleproductComponent },
+  { path: 'usercart', component: UserCartComponent },
   { path: 'aboutus', component: AboutUSComponent, title: 'aboutus' },
   { path: 'contactus', component: ContactUSComponent, title: 'contactus' },
   { path: '**', component: NotfoundComponent },

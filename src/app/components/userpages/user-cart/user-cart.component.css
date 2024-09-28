@@ -68,6 +68,10 @@ input {
     justify-content: center;
 }
 
+.delimg2:hover {
+    transform: scale(1.13);
+}
+
 #contall {
     border-radius: 20px;
     background-color: aliceblue;
@@ -90,6 +94,11 @@ input {
 
     .delimg1 {
         display: inline;
+
+    }
+
+    .delimg1:hover {
+        transform: scale(1.03);
     }
 
     .delimg2 {

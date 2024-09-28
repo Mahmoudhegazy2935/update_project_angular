@@ -11,7 +11,7 @@
 }
 
 .contimg {
-    /* margin-left: 30%; */
+    margin-block: 12px;
     width: 110px;
     height: 110px;
     border-radius: 1000px;
@@ -22,6 +22,10 @@ img {
     width: 100%;
     height: 100%;
     border-radius: 1000px;
+}
+
+.row {
+    justify-content: center;
 }
 
 @media(max-width:678px) {

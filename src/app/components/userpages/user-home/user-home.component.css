@@ -38,7 +38,14 @@
 }
 
 .contImg {
+    display: flex;
+    justify-content: end;
+    align-items: center;
     width: 50%;
+}
+
+.contImg img {
+    border-radius: 20px  35px ;
 }
 
 #addBtn {
@@ -81,20 +88,20 @@
 
 #contimage {
     margin-top: 12px;
-    width: 250px;
-    height: 300px;
+    display: flex;
+    justify-content: center;
 }
 
 #image_text {
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 #viewbtn {
     background-color: #4094F7;
     color: white;
     border-radius: 13px;
+
 }
 
 #viewbtn:hover {
@@ -125,6 +132,11 @@
         width: 100%;
     }
 
+    .contImg img {
+        width: 100%;
+
+    }
+
     .contimg_text {
         flex-direction: column;
         margin-bottom: 270px;
@@ -137,5 +149,6 @@
     .bodycards {
         display: flex;
         justify-content: center;
+        margin-top: 400px;
     }
 }

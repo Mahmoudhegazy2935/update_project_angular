@@ -15,11 +15,13 @@ button {
     color: white;
 
 }
+
 .name {
     font-size: 40px;
     font-weight: bolder;
 
 }
+
 li {
     color: rgb(197, 211, 224);
 }
@@ -43,7 +45,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 87%;
+    width: 100%;
 }
 
 .menu {
@@ -52,11 +54,21 @@ a {
 
 @media (max-width:768px) {
     nav {
-        align-items: center;
+        /* align-items: center; */
     }
 
-    .elements {
+    #elements {
+        position: absolute;
+        background-color: #4094F7;
+        width: 100%;
+        top: 55px;
+        left: 0;
+        z-index: 9999;
         display: none;
+    }
+
+    ul {
+        flex-direction: column;
     }
 
     .menu {

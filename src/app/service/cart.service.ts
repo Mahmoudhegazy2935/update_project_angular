@@ -57,12 +57,12 @@ export class CartService {
     this.product.next(this.cartitemlist);
   }
 
-  // حفظ السلة في LocalStorage
+
   private updateLocalStorage() {
     localStorage.setItem('cartItems', JSON.stringify(this.cartitemlist));
   }
 
-  // استرجاع السلة من LocalStorage
+
   private getCartFromLocalStorage(): any {
     const savedCart = localStorage.getItem('cartItems');
     return savedCart ? JSON.parse(savedCart) : [];
